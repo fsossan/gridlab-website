@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+Dispatch
+ - Gridlab HES-SO Valais-Wallis</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="/static/favicon_io/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+</head>
+
+
+<style>
+  /* Gridlab's colors 
+Blue 56	97	144
+Red 252	13	27
+*/
+
+  .logo {
+    height: 45px;
+    margin: 8px;
+  }
+
+  .button_nav_bar {
+    color: rgb(252 13 27);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  a {
+    color: rgb(56 97 144);
+  }
+
+  .gridlab_red {
+    color: rgb(252 13 27);
+  }
+
+  .gridlab_blue {
+    color: rgb(56 97 144);
+  }
+
+  .headshot {
+    width: 140px;
+    height: 140px;
+  }
+</style>
+
+<body class="grey lighten-5 grey-text text-darken-2">
+
+  <!-- Navigation bar -->
+  <nav class="white z-depth-1">
+    <div class="nav-wrapper ">
+      <!--<a id="logo-container" href="#" class="grey-text text-darken-2">
+        
+      </a>-->
+      <a href="/" class="brand-logo"><img style="margin: 15px;" width="200px" src="/static/img/logo_gridlab.png"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger button_nav_bar"><i
+          class="material-icons">menu</i></a>
+
+      <!-- Menu -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#expertise" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">science</i>
+            Expertise
+          </a></li>
+        <li><a href="#infrastructure" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">settings</i>
+            Infrastructure
+          </a></li>
+        <li><a href="#team" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">person</i>
+            Team
+          </a></li>
+        <li><a href="/publications.html" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">book</i>
+            Publications
+          </a></li>
+        <!--<li><a href="#" class="button_nav_bar"> Blog </a></li>-->
+        <li><a href="#" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">mail</i>
+            Contact
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
+
+  <!-- End of navigation bar -->
+
+  <!-- Main content -->
+  
+
+<style>
+      .contentimg {
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+      }
+
+      h1 {
+            color: rgb(56 97 144);;
+      }
+</style>
+
+<div class="container flow-text light">
+      <html>
+ <body>
+  <h1>
+   Dispatch
+  </h1>
+  <p>
+   The
+   <em>
+    dispatch
+   </em>
+   is a reduced-scale infrastructure to reproduce the injection of electricity into the high-voltage grid coming from a mix of renewable sources.
+  </p>
+  <p>
+   <img alt="alt text" class="contentimg" src="dispatch_control_panel.jpg" title="Dispatch control panel"/>
+  </p>
+  <p>
+   Several production units, two power lines are rescaled (voltage reduced to 400 V and power levels reduced by a factor of 5000) to all fit into a single room. Actual industrial rotating machines or commercial inverters reproduce the injection into the grid coming from either 100 MW hydro, 15 MW solar or 3 MW wind production sites.
+  </p>
+  <p>
+   <img alt="alt text" class="contentimg" src="dispatch_generator.jpg" title="Synchronous generator with step-up transformer"/>
+  </p>
+  <p>
+   Hydro: The four production groups of an existing 65-kV, 100-MW hydroelectric system, as well as the relative overhead transmission lines, are reproduced in smaller size. The full-size Pelton and Francis turbines (two units per each) are emulated by means of motors driven by programmable drives. Solar: The contribution coming from either 1-kWp actual photovoltaic panels or from a 3-kWp programmable DC source can be added to the production mix via a three-phase inverter, modeling up to 15-MWp of real-scale local solar injection. Wind: 3-MW generation, well representing the planned expansion of wind energy in the region, is reproduced by an indoor model of a wind turbine of horizontal axis (Fig. 4), controlled by a programmable drive, according to the production curve of an actual wind generator.
+  </p>
+  <p>
+   A compact mobile test bench has been realized to reproduce the situation of a protection engineer faced to a typical electrical primary substation (Fig. 7). The bench hosts some of the most common digital relays of different manufacturers. Proper instrument transformers have been specifically designed to acquire current and voltage measurements from the 400-V GridLab Dispatching infrastructure.
+  </p>
+ </body>
+</html>
+
+</div>
+
+  <!-- End of main content -->
+
+  <!-- Footer -->
+  <footer class="page-footer grey lighten-3 ">
+    <div class="container gridlab_blue">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="gridlab_blue">
+            <strong>Gridlab</strong> <br>
+            Haute Ecole Spécialisée de Suisse occidentale<br>
+            Rue de l'industrie 23 <br>
+            1950 Sion, Switzerland
+          </p>
+        </div>
+
+        <div class="col l4 offset-l2 s122">
+          <a href="https://www.hevs.ch/fr"><img src="/static/img/logo_hesso_vs.png" style="height: 80px;"> </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright grey lighten-3">
+      <!--<div class="container gridlab_blue">
+        Language: <a href="/en/index.html"> English </a> | <a href="/fr/index.html"> Français </a>
+      </div>-->
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+
+
+  
+
+  <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      //var instances = M.Sidenav.init(elems, options);
+      var instances = M.Sidenav.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });
+
+    /*document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    });*/
+  </script>
+
+  
+</body>
+
+</html>
