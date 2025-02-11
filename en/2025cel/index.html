@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+Local energy communities and self-consumption clusters in Switzerland
+ - Gridlab HES-SO Valais-Wallis</title>
+
+  <meta name="description" content="
+Local energy communities and self-consumption clusters in Switzerland (CEL, RCP, vRCP)
+">
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="/static/favicon_io/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+</head>
+
+
+<style>
+  /* Gridlab's colors 
+Blue 56	97	144
+Red 252	13	27
+*/
+
+  .logo {
+    height: 45px;
+    margin: 8px;
+  }
+
+  .button_nav_bar {
+    color: rgb(252 13 27);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  a {
+    color: rgb(56 97 144);
+  }
+
+  .gridlab_red {
+    color: rgb(252 13 27);
+  }
+
+  .gridlab_blue {
+    color: rgb(56 97 144);
+  }
+
+  .headshot {
+    width: 140px;
+    height: 140px;
+  }
+</style>
+
+<body class="grey lighten-5 grey-text text-darken-2">
+
+  
+
+
+  <!-- Navigation bar -->
+  <nav class="white z-depth-1">
+    <div class="nav-wrapper ">
+      <!--<a id="logo-container" href="#" class="grey-text text-darken-2">
+        
+      </a>-->
+      <a href="/en/index.html" class="brand-logo"><img style="margin: 15px;" width="200px" src="/static/img/logo_gridlab.png"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger button_nav_bar"><i
+          class="material-icons">menu</i></a>
+
+      <!-- Menu -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/en/index.html#expertise" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">science</i>
+            Expertise
+          </a></li>
+        <li><a href="/en/index.html#infrastructure" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">settings</i>
+            Infrastructure
+          </a></li>
+        <li><a href="/en/index.html#team" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">person</i>
+            Team
+          </a></li>
+          <li><a href="/en/blog.html" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">article</i>
+            Blog
+          </a></li>
+        <li><a href="/en/publications.html" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">book</i>
+            Publications
+          </a></li>
+        <!--<li><a href="#" class="button_nav_bar">
+            <i class="material-icons left gridlab_blue">mail</i>
+            Contact
+          </a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/en/index.html#expertise">Expertise</a></li>
+    <li><a href="/en/index.html#infrastructure">Infrastructure</a></li>
+    <li><a href="/en/index.html#team">Team</a></li>
+    <li><a href="/en/publications.html">Publications</a></li>
+    <li><a href="/en/blog.html">Blog</a></li>
+    <!--<li><a href="#">Contact</a></li>-->
+  </ul>
+
+  <!-- End of navigation bar -->
+
+  <!-- Main content -->
+  
+
+<style>
+      .contentimg {
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+      }
+
+      h1 {
+            color: rgb(56 97 144);
+      }
+
+
+      .authors {
+            color: rgb(56 97 144);;
+      }
+
+
+      .mdcontent ul {
+            display: block;
+            list-style-type: square !important;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 20px;
+      }
+
+      /*ul li {
+      margin-bottom: 10px;
+      }*/
+
+      .mdcontent li {
+            list-style-type: square !important;
+      }
+
+      h1 {
+            font-size: 34px;
+            font-weight: bold;
+      }
+
+      h2 {
+            font-size: 25px;
+      }
+
+      h3 {
+            font-size: 22px;
+      }
+
+      .warning {
+            background-color: rgb(253, 226, 176);
+            padding: 5px;
+            text-align: center;
+            color: black;
+            border-radius: 10px;
+      }
+</style>
+
+<div class="container light mdcontent">
+      <h1> Local energy communities and self-consumption clusters in Switzerland </h1>
+
+      
+
+      <html>
+ <body>
+  <p>
+   The Swiss laws define two constructs to incentivize the self-consumption of locally generated renewable electricity: self-consumption clusters (RCP,
+   <em>
+    Regroupement pour la consommation propre
+   </em>
+   ) and local energy communities. These constructs differ for extension and type of connection to the power grid.
+  </p>
+  <h2>
+   Self-consumption clusters and virtual self-consumption clusters
+  </h2>
+  <p>
+   The notion of self-consumption cluster applies to consumers and renewable generation assets connected behind a single grid connection point. In a traditional setting, each resource would have a separate meter and billing contract with the utility; self-consumption clusters make it possible for consumers to access the local renewable generation at a price directly negotiated with the generator’s owner, avoiding being billed for the retail electricity price offered by the utility. This construct applies to any renewable generation source provided that the production capacity is at least 10% of total nominal power demand and with at least 500 hours of working time per year.
+  </p>
+  <p>
+   Starting from January 1, 2025, self-consumption clusters extend to resources connected at different points of the grid below 1 kV, implying that the size of the cluster can be extended by using the low-voltage electrical connection of the distribution system operator. This is known as virtual self-consumption clusters.
+  </p>
+  <p>
+   <img alt="Alt text" class="contentimg" src="rcp.jpg" title="RCP.jpg"/>
+  </p>
+  <h2>
+   Local energy communities
+  </h2>
+  <p>
+   Similarly to the self-consumption clusters, local energy communities allow consumers to access cheaper local electricity by avoiding direct billing through individual utility power meters. However, while self-consumption clusters apply to consumers behind a single grid connection point (such as a building) or connected to the same low-voltage feeder, local energy communities extend to multiple grid connection points, explicitly envisaging the use of the distribution grid infrastructure, including medium-voltage, to enable the transfer of power at different locations. Local energy communities cannot extend to areas larger than a municipality; moreover, all connected consumers and producers should be on the same grid level and reasonably close to each other. The installed generation capacity should be at least 20% of the total demand.
+  </p>
+  <p>
+   Within the local energy community, electricity is traded according to rules and tariffs that are established internally. To account for the utilization of the grid infrastructure, distribution system operators will still apply grid tariffs, but with a cost reduction of up to 60%.
+  </p>
+  <p>
+   <img alt="Alt text" class="contentimg" src="cel.jpg" title="RCP.jpg"/>
+  </p>
+  <h2>
+   Closing remarks
+  </h2>
+  <h3>
+   Benefits for consumers and local generators
+  </h3>
+  <p>
+   Clusters for self-consumption and local energy communities favor electricity consumers by allowing them to access cheaper renewable generation, avoiding being billed with the electricity retail price even when the electricity was from a nearby PV installation. These constructs are also advantageous for local renewable generators, which can negotiate with local consumers a more profitable remuneration scheme than what is offered by the utility.
+  </p>
+  <p>
+   Implementing these constructs refers to re-arranging power measurements for billing purposes; they do not alter physical power flows or require the installation of additional electrical connections.
+  </p>
+  <p>
+   Thanks to enabling access to more convenient electricity, consumers will benefit from shifting their electricity consumption to times when (cheap) local renewable generation is available. Consumption shifting can be achieved by changing habits or, more effectively, for loads offering communication interfaces and some degree of controllability (such as electric vehicle chargers or heat pumps), with automatic systems that account for the electricity price. Consumption shifting can also be achieved by the use of energy storage, such as battery energy storage systems.
+  </p>
+  <h3>
+   Challenges, Requirements and Opportunities
+  </h3>
+  <p>
+   Enabling energy communities and self-consumption clusters require remote measurement capability at all the grid connection points of consumers and generators. Many Swiss utilities are currently finalizing smart meters roll-out to make this happen.
+  </p>
+  <p>
+   Effective operations of energy communities and self-consumption clusters require well-designed real-time coordination and control of the loads and energy storage assets. This process, generally known as energy management, can be implemented by dedicated software with various degrees of complexity and completeness. At HES-SO Valais, we develop state-of-the-art energy management systems that combine forecasting models of consumption and generation, numerical weather predictions, techno-economic optimization programs, and mathematical models of assets that can guarantee optimal or near-optimal operations.
+  </p>
+  <p>
+   While legislative norms now clearly open to the use of the local distribution grid to extend the range of self-consumption clusters and energy communities, the capability of the existing distribution grids should not be taken for granted. In particular, existing distribution grids are designed to host limited amount of renewable generation and prescribed levels of power demand; exceeding these design values will unavoidably lead to violating the operational limits of the power distribution infrastructure, even in the context of the energy communities, requiring expensive grid upgrades, and possibly defying the purpose of energy communities. For this reason, well-designed energy management should consider the inclusion of accurate models of the power grid to capture their strenght and limits. Distribution system operators, who typically have a detailed knowledge of their network, could extend their offer to their customers by offering turn-key energy management software solutions for enabling RCP, vRCP, and CEL.
+  </p>
+  <h3>
+   System and grid benefits
+  </h3>
+  <p>
+   Implementing self-consumption of locally generated electricity is advantageous because it reduces losses in power lines and cables and, if well coordinated, leads to better utilization of the power distribution grids, with less congestions and improved voltage levels.
+  </p>
+  <h2>
+   For more information
+  </h2>
+  <p>
+   If you are interested to learn more or discuss developments, feel free to reach out.
+  </p>
+  <h2>
+   References
+  </h2>
+  <ul>
+   <li>
+    AES (seen on 2024),
+    <a href="https://www.strom.ch/fr/media/15152/download">
+     Réglementation de la consommation propre
+    </a>
+    .
+   </li>
+   <li>
+    Definition of self consumption clusters (2025),
+    <a href="https://www.fedlex.admin.ch/eli/cc/2017/763/de">
+     Law 730.01
+    </a>
+    .
+   </li>
+   <li>
+    Introduction of local energy communities (2024),
+    <a href="https://www.fedlex.admin.ch/eli/oc/2024/679/it">
+     Atto mantello RU 2024 679
+    </a>
+    .
+   </li>
+  </ul>
+ </body>
+</html>
+
+
+      </br>
+      <p style="font-style: italic;">
+            Authors: <a href="mailto:fabrizio.sossan&commat;hevs&period;ch">Fabrizio Sossan</a>, <a href="mailto:pierre.roduit&commat;hevs&period;ch">Pierre Roduit</a> </br>
+            Last update: 02/02/2025 </br>
+      </p>
+
+</div>
+
+  <!-- End of main content -->
+
+  <!-- Footer -->
+  <footer class="page-footer grey lighten-3 ">
+    <div class="container gridlab_blue">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="gridlab_blue">
+            <strong>Gridlab</strong> <br>
+            Haute Ecole Spécialisée de Suisse occidentale<br>
+            Institute of Energy and Environment<br>
+            Rue de l'industrie 23 <br>
+            1950 Sion, Switzerland
+          </p>
+        </div>
+
+        <div class="col l4 offset-l2 s122">
+          <a href="https://www.hevs.ch/fr"><img src="/static/img/logo_hesso_vs.png" style="height: 80px;"> </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright grey lighten-3">
+      <div class="container black-text">
+        <p class="right-align">Language:
+          <a href="/en/2025cel/index.html"> English </a> |
+          <a href="/fr/2025cel/index.html"> Français </a> |
+          <a href="/de/2025cel/index.html"> Deutsch </a> |
+          <a href="/it/2025cel/index.html"> Italiano </a> 
+        </p> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- End of Footer -->
+
+  
+
+  <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });
+
+    /*document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    });*/
+  </script>
+
+  
+</body>
+
+</html>
