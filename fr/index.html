@@ -22,6 +22,22 @@ Homepage of the Gridlab laboratory at HES-SO Valais.
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+
+
+  <!-- Math rendering -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <!-- End of math rendering -->
+
 </head>
 
 
@@ -79,12 +95,12 @@ Red 252	13	27
       <ul class="right hide-on-med-and-down">
         <li><a href="/fr/index.html#expertise" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">science</i>
-            Compétences
+            Compétences &amp; Infrastructure
           </a></li>
-        <li><a href="/fr/index.html#infrastructure" class="button_nav_bar">
+        <!--<li><a href="/fr/index.html#infrastructure" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">settings</i>
             Infrastructure
-          </a></li>
+          </a></li>-->
         <li><a href="/fr/index.html#team" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">person</i>
             Équipe
@@ -110,8 +126,8 @@ Red 252	13	27
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/fr/index.html#expertise">Compétences</a></li>
-    <li><a href="/fr/index.html#infrastructure">Infrastructure</a></li>
+    <li><a href="/fr/index.html#expertise">Compétences &amp; Infrastructure</a></li>
+    <!--<li><a href="/fr/index.html#infrastructure">Infrastructure</a></li>-->
     <li><a href="/fr/index.html#team">Équipe</a></li>
     <li><a href="/fr/publications.html">Publications</a></li>
     <li><a href="/fr/blog.html">Blog</a></li>
@@ -295,7 +311,7 @@ Red 252	13	27
       <div class="col s8 offset-s2 m5 offset-m2">
         <div class="card">
           <div class="card-image">
-            <img src="/static/img/home/generic_square.jpg">
+            <img src="/static/img/home/square_hil.jpg">
             <!--<a class="btn-floating halfway-fab waves-effect waves-light red" href="todo">
               <i class="material-icons">arrow_right_alt</i>
             </a>-->

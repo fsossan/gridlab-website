@@ -26,6 +26,22 @@ Homepage of the Gridlab laboratory at HES-SO Valais.
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+
+
+  <!-- Math rendering -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <!-- End of math rendering -->
+
 </head>
 
 
@@ -83,12 +99,12 @@ Red 252	13	27
       <ul class="right hide-on-med-and-down">
         <li><a href="/it/index.html#expertise" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">science</i>
-            Competenze
+            Competenze &amp; Infrastruttura
           </a></li>
-        <li><a href="/it/index.html#infrastructure" class="button_nav_bar">
+        <!--<li><a href="/it/index.html#infrastructure" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">settings</i>
             Infrastruttura
-          </a></li>
+          </a></li>-->
         <li><a href="/it/index.html#team" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">person</i>
             Personale
@@ -114,8 +130,8 @@ Red 252	13	27
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/it/index.html#expertise">Competenze</a></li>
-    <li><a href="/it/index.html#infrastructure">Infrastruttura</a></li>
+    <li><a href="/it/index.html#expertise">Competenze &amp; Infrastruttura</a></li>
+    <!--<li><a href="/it/index.html#infrastructure">Infrastruttura</a></li>-->
     <li><a href="/it/index.html#team">Personale</a></li>
     <li><a href="/it/publications.html">Pubblicazioni</a></li>
     <li><a href="/it/blog.html">Blog</a></li>

@@ -18,6 +18,22 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="/static/favicon_io/site.webmanifest">
+
+
+  <!-- Math rendering -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript"
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <!-- End of math rendering -->
+
 </head>
 
 
@@ -75,12 +91,12 @@ Red 252	13	27
       <ul class="right hide-on-med-and-down">
         <li><a href="/de/index.html#expertise" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">science</i>
-            Kompetenzen
+            Kompetenzen &amp; Infrastruktur
           </a></li>
-        <li><a href="/de/index.html#infrastructure" class="button_nav_bar">
+        <!--<li><a href="/de/index.html#infrastructure" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">settings</i>
             Infrastruktur
-          </a></li>
+          </a></li>-->
         <li><a href="/de/index.html#team" class="button_nav_bar">
             <i class="material-icons left gridlab_blue">person</i>
             Team
@@ -106,8 +122,8 @@ Red 252	13	27
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="/de/index.html#expertise">Kompetenzen</a></li>
-    <li><a href="/de/index.html#infrastructure">Infrastruktur</a></li>
+    <li><a href="/de/index.html#expertise">Kompetenzen &amp; Infrastruktur</a></li>
+    <!--<li><a href="/de/index.html#infrastructure">Infrastruktur</a></li>-->
     <li><a href="/de/index.html#team">Team</a></li>
     <li><a href="/de/publications.html">Publikationen</a></li>
     <li><a href="/de/blog.html">Blog</a></li>

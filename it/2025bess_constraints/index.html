@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-Gridlab District
+Voltage- and current-aware power constraints for BESSs in scheduling problems
  - Gridlab HES-SO Valais-Wallis</title>
   <meta name="description" content="
-HESSO Valais-Wallis Gridlab District experimental infrastructure
+We summarize the findings from a recent paper in which we demonstrated how to calculate more accurate power constraints for Battery Energy Storage Systems (BESS) in energy management and scheduling problems.
 ">
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -197,11 +197,11 @@ Red 252	13	27
 </style>
 
 <div class="container light mdcontent">
-      <h1> Gridlab District </h1>
+      <h1> Voltage- and current-aware power constraints for BESSs in scheduling problems </h1>
       
       <p style="font-style: italic;">
-            Authors: Fabrizio Sossan </br>
-            Last update: 01 February 2025 </br>
+            Authors: <a href="mailto:fabrizio.sossan&commat;hevs&period;ch">Fabrizio Sossan</a>, <a href="mailto:stefano.cassano&commat;hevs&period;ch">Stefano Cassano</a> </br>
+            Last update: 29 March 2025 </br>
       </p>
 
       
@@ -212,34 +212,62 @@ Red 252	13	27
 
       <html>
  <body>
+  <h2>
+   Energy management for batteries
+  </h2>
   <p>
-   The
-   <em>
-    district
-   </em>
-   is a full-scale experimental platform that reproduces a real-world low-voltage distribution grid. We have four districts, each consisting of one grid connection point (a medium-to-low voltage substation transformer) and four nodes. Each node is capable to replicate the consumption and distributed generation patterns typical of residential or commercial consumers, using a back-to-back AC/DC converter supplied by a dedicated power line. The four districts can be assembled in series to form a 17-node distribution grid.
+   When operating a Battery Energy Storage System (BESS), energy management is an essential task to ensure that the BESS has sufficient energy to provide the prescribed services. Energy management problems in the literature are commonly formulated as optimization problems, seeking to determine the optimal charging and discharging trajectories for the battery, based on forecasts of the services it is expected to deliver and subject to its power and state-of-charge constraints. This problem is also referred to as the scheduling problem.
+  </p>
+  <h2>
+   Traditional formulation of BESS power constraints and an improved version
+  </h2>
+  <p>
+   In such optimization problems, battery power constraints are typically formulated assuming that the battery can charge or discharge at the converter's rated power. Say $B_t$ is the battery power and $B_r$ the rated power of converter (and assuming, at this stage, no reactive power from the converter is involved in the problem), this reads as $-B^r \le B_t \le B^r$.
   </p>
   <p>
-   <img alt="alt text" class="contentimg" src="/it/in_district/district_diagram.png" title="District diagram"/>
+   While this modeling choice leads to simple and easy-to-implement power constraints into optimization problems, it is also an approximation because the battery's charging and discharging capabilities depend on the current and voltage limits of the battery cells and are affected by the battery's State Of Charge (SOC). The following plot compares the static, "classic", power constraints (dashed lines) with the power constraints (continous lines) calculated accounting for the voltage and current limits of a large battery pack.
   </p>
   <p>
-   We use this setup to analyze the impact of renewable energy generation, such as photovoltaic systems, and the growing demand from electrified loads, like electric vehicles, on power distribution grids. Moreveor, we use it to test control strategies for congestion management and voltage control in distribution grids.
+   <img alt="Alt text" class="contentimg" src="/it/2025bess_constraints/power_constraints.png" title="power_constraints.png"/>
   </p>
   <p>
-   At the core of the GridLab LV is a 400 V AC three-phase power line, to which loads and converters are connected. The system is monitored by power, voltage and current (RMS) meters.  The four districts are equipped with a dozen of static converters, for a total power capacity of 150 kVA. They are linked with emulated overhead lines or buried cable,  spanning a total length of 500 meters. An Ethernet-based communication system enables the exchange of data between the meters, the converters and the controller.
+   As the figure shows, the discharging power capability decreases when the battery is nearly empty (low SOC) due to the reduced internal battery voltage, which requires a higher current to deliver the same power. Conversely, the charging power capability is reduced when the battery is approaching 100% SOC because large charging currents might cause large voltage values. If you've ever used an electric vehicle (EV), you might have experienced these effects first-hand: when fast charging, the charging power slows down when the battery is nearly full, and when the battery is low, the car won't accelerate as fast.
   </p>
   <p>
-   <img alt="alt text" class="contentimg" src="/it/in_district/district_diagram_2.png" title="District diagram"/>
+   The good news is that these more accurate power constraints are convex (and linear) with respect to the battery power, meaning you can implement them in your optimal scheduling problem without affecting its tractability. For more details, see the paper. In addition, many Model Predictive Control (MPC) strategies for batteries are built on similar principles, so these findings naturally extend to MPC and other forms of receding horizon optimization.
   </p>
   <p>
-   This setup enables the creation of scenarios where distributed generation is used to maintain voltage levels within the tolerance range at every point of the distribution grid and current levels within the lines ampacities. It also facilitates the management of energy flow between generation sources, storage units, and consumers, either within a building or across the entire district.
+   As a closing remark, while convexity may seem evident from the figure (the region enclosed by the blue line is indeed convex), there's more to consider given that, in a scheduling problem, the battery SOC is itself a function of the power. We have demonstrated convexity of the entire modeling toolchain (battery power to SOC to voltage- and to  current-aware power constraints). This result follows from the fact that an affine transformation of a convex set preserves convexity. The only assumption necessary for this to hold is that the battery’s internal voltage and SOC are in a linear relationship, which is a reasonable approximation (except at extreme SOC levels).
   </p>
-  <h3>
-   For more information
-  </h3>
+  <h2>
+   What's the implication of using innacurate models of the battery power limits?
+  </h2>
+  <p>
+   It’s important to note that, regardless of the charging or discharging power decision made by the scheduling problem or MPC, it is always the responsibility of the Battery Management System (BMS) to ensure that the selected power setpoint is feasible. From a safety perspective (a great concern for BESS), implementing innacurate power constraints in the decision-making model is thus not critical.
+  </p>
+  <p>
+   However, using inaccurate models for the power constraints can significantly degrade the performance of the scheduling action. For instance, the scheduler might unknowingly place the BESS in a state where it cannot deliver the required power; the BESS will thus fail in providing the service it was intended to deliver. This issue is especially critical in applications where BESSs are required to charge or discharge close to their rated power, in - what we call - power-intensive applications. Hydropower plants hybridized with BESS to reduce the fatigue of critical mechanical components (e.g., penstocks, turbines, guide vanes and associated mechanishms) is a prime example of such an application.
+  </p>
+  <h2>
+   Complete formulation
+  </h2>
+  <p>
+   For the complete formulation on how to formulate the SOC-dependant power capability curves of the BESS and how to derive convex power constraints for a BESS, please refer to the paper here below.
+  </p>
+  <h2>
+   References
+  </h2>
   <ul>
    <li>
-    Prof. Fabrizio Sossan
+    Cassano, S., &amp; Sossan, F. (2025). Scheduling power-intensive operations of Battery Energy Storage Systems and application to hybrid hydropower plants. Applied Energy, 386, 125559.
+    <a href="https://arxiv.org/pdf/2403.16821">
+     Link
+    </a>
+    to preprint.
+    <a href="https://www.sciencedirect.com/science/article/pii/S0306261925002892">
+     Link
+    </a>
+    to publisher.
    </li>
   </ul>
  </body>
@@ -272,10 +300,10 @@ Red 252	13	27
     <div class="footer-copyright grey lighten-3">
       <div class="container black-text">
         <p class="right-align">Language:
-          <a href="/en/in_district/index.html"> English </a> |
-          <a href="/fr/in_district/index.html"> Français </a> |
-          <a href="/de/in_district/index.html"> Deutsch </a> |
-          <a href="/it/in_district/index.html"> Italiano </a> 
+          <a href="/en/2025bess_constraints/index.html"> English </a> |
+          <a href="/fr/2025bess_constraints/index.html"> Français </a> |
+          <a href="/de/2025bess_constraints/index.html"> Deutsch </a> |
+          <a href="/it/2025bess_constraints/index.html"> Italiano </a> 
         </p> 
       </div>
     </div>
